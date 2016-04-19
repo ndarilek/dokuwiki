@@ -838,12 +838,7 @@ function html_recent($first=0, $show_changes='both'){
 
         $form->addElement(form_makeOpenTag('span', array('class' => 'user')));
         if($recent['user']){
-            $form->addElement('<bdi>'.editorinfo($recent['user']).'</bdi>');
-            if(auth_ismanager()){
-                $form->addElement(' <bdo dir="ltr">('.$recent['ip'].')</bdo>');
-            }
-        }else{
-            $form->addElement('<bdo dir="ltr">'.$recent['ip'].'</bdo>');
+            $form->addElement('<bdi>'.editorinfo($recent['username']).'</bdi>');
         }
         $form->addElement(form_makeCloseTag('span'));
 
