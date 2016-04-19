@@ -1641,7 +1641,7 @@ function userlink($username = null, $textonly = false) {
         if($textonly){
             $data['name'] = $INFO['userinfo']['name']. ' (' . $INPUT->server->str('REMOTE_USER') . ')';
         }else {
-            $data['name'] = '<bdi>' . hsc($INFO['userinfo']['name']) . '</bdi> (<bdi>' . hsc($INPUT->server->str('REMOTE_USER')) . '</bdi>)';
+            $data['name'] = '<bdi>' . hsc($INFO['userinfo']['name']) . '</bdi>';
         }
     }
 
