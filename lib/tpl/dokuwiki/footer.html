@@ -1,4 +1,4 @@
 <script>
-  window.parent.postMessage({'setPath': location.pathname + location.hash}, '*');
+  window.parent.postMessage({'setPath': location.pathname + location.search + location.hash}, '*');
   window.parent.postMessage({'setTitle': document.title}, '*');
 </script>
