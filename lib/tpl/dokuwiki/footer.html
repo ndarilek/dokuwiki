@@ -1,4 +1,25 @@
 <script>
   window.parent.postMessage({'setPath': location.pathname + location.search + location.hash}, '*');
   window.parent.postMessage({'setTitle': document.title}, '*');
+  var login = document.querySelector('.login');
+  if(login) {
+    login.setAttribute('href', '#');
+    login.addEventListener('click', function() {
+      window.parent.postMessage({overlaySignin: {creatingAccount: false}}, '*');
+    });
+  }
+  var register = document.querySelector('.register');
+  if(register) {
+    register.setAttribute('href', '#');
+    register.addEventListener('click', function() {
+      window.parent.postMessage({overlaySignin: {creatingAccount: true}}, '*');
+    });
+  }
+  var logout = document.querySelector('.logout');
+  if(logout) {
+    logout.setAttribute('href', '#');
+    logout.addEventListener('click', function() {
+      window.parent.postMessage({requestLogout: true}, '*');
+    });
+  }
 </script>
